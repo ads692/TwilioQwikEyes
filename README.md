@@ -15,16 +15,28 @@ Twilio Quickstart Guide - https://www.twilio.com/docs/api/video/guide/quickstart
 
 I have installed all the dependencies for the app permanently. If for some reason the app doesn't build, you can add the dependencies using the following instructions:
 
-- Open up the Podfile in the Pods folder and paste these lines:
+- Open up the Podfile in the Pods folder and paste these lines (delete the blank lines if necessary):
+
+___________________________________________________________________
 
 source 'https://github.com/twilio/cocoapod-specs'
+
 source 'https://github.com/CocoaPods/Specs.git'
+
 target 'VideoQuickStart' do
+
     pod 'TwilioConversationsClient', '~>0.25.0'
+
     use_frameworks!
+
     pod 'SnapKit', '~> 0.15.0'
+
     pod 'SwiftyTimer'
+
 end
+
+___________________________________________________________________
+
 
 - Save it, and from the terminal, navigate to the file's location and execute the command 'pod install'. This will take a while, but will install everything required.
 
