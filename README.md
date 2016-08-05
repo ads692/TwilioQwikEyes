@@ -2,7 +2,9 @@
 
 Before you start, make sure your Xcode is updated to support:
 Xcode 7.2.1
+
 Swift 2.1
+
 iOS 8.1 and up
 
 Once that is done, create a Twilio account from twilio.com
