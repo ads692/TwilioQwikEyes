@@ -1,0 +1,8 @@
+source 'https://github.com/twilio/cocoapod-specs'
+source 'https://github.com/CocoaPods/Specs.git'
+target 'VideoQuickStart' do
+    pod 'TwilioConversationsClient', '~>0.25.0'
+    use_frameworks!
+    pod 'SnapKit', '~> 0.15.0'
+    pod 'SwiftyTimer'
+end
