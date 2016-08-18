@@ -47,3 +47,10 @@ Open the app in Xcode by running 'VideoQuickStart.xcworkspace'
 Copy the generated token into ViewController.swift, for the variable "accessToken".
 
 Run the app. Once it is running, on the page where you created the test token, navigate to the part of the page with the button "Create conversation". This should start streaming from both your phone and Mac.
+
+___________________________________________________________________
+
+TO DO:
+
+- Facebook/ Google login authentication
+- Generate client tokens dynamically from the login.
