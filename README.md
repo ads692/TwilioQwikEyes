@@ -42,6 +42,8 @@ ___________________________________________________________________
 
 Once the app is built, create a test token here: https://www.twilio.com/user/account/video/dev-tools/testing-tools
 
-Copy the generated token into your app in ViewController.swift, for the variable "accessToken".
+Open the app in Xcode by running 'VideoQuickStart.xcworkspace'
+
+Copy the generated token into ViewController.swift, for the variable "accessToken".
 
 Run the app. Once it is running, on the page where you created the test token, navigate to the part of the page with the button "Create conversation". This should start streaming from both your phone and Mac.
