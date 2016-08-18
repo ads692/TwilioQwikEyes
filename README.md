@@ -7,7 +7,7 @@ Swift 2.1
 
 iOS 8.1 and up
 
-Once that is done, create a Twilio account from twilio.com
+Once that is done, create a Twilio account from https://www.twilio.com/try-twilio
 
 Follow the quickstart guide to create the 4 required API Keys.
 
