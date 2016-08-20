@@ -18,10 +18,10 @@ class ViewController: UIViewController {
   
   // Configure access token manually for testing, if desired! Create one manually in the console 
   // at https://www.twilio.com/user/account/video/dev-tools/testing-tools
-  var accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzlmZTNhM2ZlZTBiZWRmNTIzMTkzZmVkYTEwNDY0YWIzLTE0NzE0OTM1MjEiLCJpc3MiOiJTSzlmZTNhM2ZlZTBiZWRmNTIzMTkzZmVkYTEwNDY0YWIzIiwic3ViIjoiQUM4Yzc4M2I4YWE5NGVkMTZiNzQ3MjkxZjNiOTAwZDc2NSIsImV4cCI6MTQ3MTQ5NzEyMSwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiQm9iIiwicnRjIjp7ImNvbmZpZ3VyYXRpb25fcHJvZmlsZV9zaWQiOiJWUzNhZTExZmQxYWFlYzY0ZWIxMGY3ZmFmYjkyOWNiNDYxIn19fQ.ieHhzglrU8tf4jxA-11MI8tjefX_-5conHlnkYWF4BI”
+  var accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJTSzlmZTNhM2ZlZTBiZWRmNTIzMTkzZmVkYTEwNDY0YWIzLTE0NzE3Mjg4NTgiLCJpc3MiOiJTSzlmZTNhM2ZlZTBiZWRmNTIzMTkzZmVkYTEwNDY0YWIzIiwic3ViIjoiQUM4Yzc4M2I4YWE5NGVkMTZiNzQ3MjkxZjNiOTAwZDc2NSIsImV4cCI6MTQ3MTczMjQ1OCwiZ3JhbnRzIjp7ImlkZW50aXR5IjoiQWRpdHlhIiwicnRjIjp7ImNvbmZpZ3VyYXRpb25fcHJvZmlsZV9zaWQiOiJWUzNhZTExZmQxYWFlYzY0ZWIxMGY3ZmFmYjkyOWNiNDYxIn19fQ.vEva5az0xZo7Xd0cXjNPTy57456uqKsodmhk8yxUjpE"
   
   // Configure remote URL to fetch token from
-  var tokenUrl = "http://localhost:5000/token.php"
+  var tokenUrl = "http://localhost:8000/token.php"
   
   // Video SDK components
   var accessManager: TwilioAccessManager?
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
         self.hangupButton.alpha = 0.0
         self.view.addSubview(self.hangupButton)
         self.hangupButton.setImage(UIImage(named: "hangup"), forState: .Normal)
-        self.hangupButton.addTarget(self, action: "hangup:", forControlEvents: .TouchUpInside)
+        self.hangupButton.addTarget(self, action: #selector(ViewController.hangup(_:)), forControlEvents: .TouchUpInside)
         self.hangupButton.snp_makeConstraints { (make) -> Void in
             make.height.equalTo(60)
             make.width.equalTo(60)
@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         self.switchCameraButton.alpha = 0.0
         self.view.addSubview(self.switchCameraButton)
         self.switchCameraButton.setImage(UIImage(named: "switch-camera"), forState: .Normal)
-        self.switchCameraButton.addTarget(self, action: "switchCamera", forControlEvents: .TouchUpInside)
+        self.switchCameraButton.addTarget(self, action: #selector(ViewController.switchCamera), forControlEvents: .TouchUpInside)
         self.switchCameraButton.snp_makeConstraints { (make) -> Void in
             make.height.equalTo(60)
             make.width.equalTo(60)
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
         self.muteButton.alpha = 0.0
         self.view.addSubview(self.muteButton)
         self.muteButton.setImage(UIImage(named: "mute"), forState: .Normal)
-        self.muteButton.addTarget(self, action: "toggleMute", forControlEvents: .TouchUpInside)
+        self.muteButton.addTarget(self, action: #selector(ViewController.toggleMute), forControlEvents: .TouchUpInside)
         self.muteButton.snp_makeConstraints { (make) -> Void in
             make.height.equalTo(60)
             make.width.equalTo(60)
@@ -187,7 +187,7 @@ class ViewController: UIViewController {
     }
     
     func setUpVideoTapRecognizer() {
-        let tap = UITapGestureRecognizer(target: self, action: Selector("remoteMediaViewTapped"))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.remoteMediaViewTapped))
         self.remoteMediaView.addGestureRecognizer(tap)
         self.remoteMediaView.userInteractionEnabled = true
     }
